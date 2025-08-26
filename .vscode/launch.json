@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "cds watch --profile hybrid",
+      "name": "CAP Debug",
+      "request": "launch",
+      "type": "node-terminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

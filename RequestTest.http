@@ -1,0 +1,11 @@
+@host = http://localhost
+@port = 4004
+@NewsBase = catalog/news
+
+###
+# Sağlık kontrolü (hello)
+GET {{host}}:{{port}}/{{NewsBase}}/hello(name='Beyza')
+
+###
+# Haberler (OData V4 function)
+GET http://localhost:4004/catalog/news/Articles(q='tesla',fromDate='2025-07-26',sortBy='publishedAt',language='tr',page=1,pageSize=5)

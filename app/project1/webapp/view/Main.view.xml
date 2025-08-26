@@ -1,0 +1,38 @@
+<mvc:View
+    controllerName="project1.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <Button
+            id="myButton"
+            text="{i18n>buttonGetNews}"
+            press="onGetNews"
+        />
+        <VBox id="_IDGenVBox">
+            <Text
+                id="_IDGenText1"
+                text="Durum: {news>/status}"
+            />
+            <Text
+                id="_IDGenText2"
+                text="Toplam Haber: {news>/totalResults}"
+            />
+        </VBox>
+        <List
+            id="_IDGenList"
+            headerText="Haberler"
+            items="{news>/articles}"
+        >
+            <StandardListItem
+                id="_IDGenStandardListItem"
+                title="{news>title}"
+                description="{news>description}"
+                info="{news>sourceName}"
+            />
+        </List>
+    </Page>
+</mvc:View>

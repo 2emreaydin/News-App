@@ -1,0 +1,23 @@
+{
+  "name": "my-news-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^4.1.1",
+    "@sap-cloud-sdk/http-client": "^4.1.1",
+    "@sap/cds": "^9.2.1",
+    "axios": "^1.11.0"
+  },
+  "cds": {
+    "odata": {
+      "version": "v2"
+    }
+  }
+}
