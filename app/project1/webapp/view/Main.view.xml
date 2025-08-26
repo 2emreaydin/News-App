@@ -2,37 +2,79 @@
     controllerName="project1.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
 >
     <Page
         id="page"
         title="{i18n>title}"
     >
-        <Button
-            id="myButton"
-            text="{i18n>buttonGetNews}"
-            press="onGetNews"
-        />
         <VBox id="_IDGenVBox">
+            <Toolbar id="_IDGenToolbar">
+                <Title
+                    id="_IDGenTitle"
+                    text="Haber Arama"
+                />
+                <ToolbarSpacer id="_IDGenToolbarSpacer" />
+
+                <SearchField
+                    id="idSearchQuery"
+                    width="15rem"
+                    placeholder="Anahtar kelime ara"
+                    search="onSearchNews"
+                />
+
+                <Select
+                    id="idSelectLang"
+                    width="7rem"
+                >
+                    <core:Item
+                        id="_IDGenItem"
+                        key="tr"
+                        text="Türkçe"
+                    />
+                    <core:Item
+                        id="_IDGenItem1"
+                        key="en"
+                        text="İngilizce"
+                    />
+                </Select>
+
+                <Input
+                    id="idPageSize"
+                    width="5rem"
+                    type="Number"
+                    placeholder="Adet"
+                    value="5"
+                />
+
+                <Button
+                    id="_IDGenButton"
+                    text="Ara"
+                    press="onSearchNews"
+                />
+            </Toolbar>
+
             <Text
-                id="_IDGenText1"
+                id="_IDGenText"
                 text="Durum: {news>/status}"
             />
             <Text
-                id="_IDGenText2"
-                text="Toplam Haber: {news>/totalResults}"
+                id="_IDGenText1"
+                text="Toplam: {news>/totalResults}"
             />
+
+            <List
+                id="_IDGenList1"
+                headerText="Haberler"
+                items="{news>/articles}"
+            >
+                <StandardListItem
+                    id="_IDGenStandardListItem"
+                    title="{news>title}"
+                    description="{news>description}"
+                    info="{news>sourceName}"
+                />
+            </List>
         </VBox>
-        <List
-            id="_IDGenList"
-            headerText="Haberler"
-            items="{news>/articles}"
-        >
-            <StandardListItem
-                id="_IDGenStandardListItem"
-                title="{news>title}"
-                description="{news>description}"
-                info="{news>sourceName}"
-            />
-        </List>
     </Page>
 </mvc:View>
