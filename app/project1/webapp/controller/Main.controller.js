@@ -1,7 +1,8 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-  "sap/ui/model/json/JSONModel"
-], (Controller,JSONModel) => {
+    "sap/ui/model/json/JSONModel",
+    "sap/m/MessageBox"
+], (Controller, JSONModel,MessageBox) => {
     "use strict";
 
     return Controller.extend("project1.controller.Main", {
@@ -14,7 +15,7 @@ sap.ui.define([
 
             const sParameter = {
                 q: sQuery || "tesla",
-                fromDate: "2025-07-26",
+                fromDate: "2025-08-24",
                 sortBy: "publishedAt",
                 language: sLang,
                 page: 1,
@@ -29,10 +30,9 @@ sap.ui.define([
                     this.getView().setModel(oJson, "news");
                 }.bind(this),
                 error: function (oError) {
-                    console.error("News error:", oError);
+                   MessageBox.error(oError.responseJSON.error.message);
                 }
             });
         }
-
     });
 });

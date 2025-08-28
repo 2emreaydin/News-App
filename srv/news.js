@@ -12,10 +12,9 @@ module.exports = cds.service.impl(function () {
 
   // NewsAPI function
   this.on("Articles", async (req) => {
-    console.log("test");
     const {
       q = "d",
-      fromDate = "2025-07-26",
+      fromDate = "2025-08-22",
       sortBy = "publishedAt",
       language = "tr",
       page = 1,

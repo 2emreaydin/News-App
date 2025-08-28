@@ -8,7 +8,7 @@
         id="page"
         title="{i18n>title}"
     >
-        <VBox id="_IDGenVBox">
+        <VBox id="_IDGenVBox" class="sapUiMediumMargin">
             <Toolbar id="_IDGenToolbar">
                 <Title
                     id="_IDGenTitle"
